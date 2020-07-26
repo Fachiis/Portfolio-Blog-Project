@@ -1,0 +1,96 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Zasha Fachii Felix">
+    <meta name="generator" content="Jekyll v4.0.1">
+
+    {% block title %}<title>{{ blog.title }}</title>{% endblock title %}
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/album/">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
+        <!-- Favicons -->
+    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
+    <meta name="msapplication-config" content="/docs/4.5/assets/img/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#563d7c">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="main.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <a class="navbar-brand text-primary" href="{% url 'home' %}">Fachiis</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav ml-auto">
+                  <a class="nav-item nav-link" href="#">Resume</a>
+                  <a class="nav-item nav-link active" href="#">Blog</a>
+                  <a class="nav-item nav-link" href="#">Twitter</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+<main role="main">
+
+  <div class="container lead pt-5">
+    <h1 class="lead text-center text-success pt-4">{{ blog.title }}</h1>
+    <p class="text-center">{{ blog.pretty_pub_date }}</p>
+    <hr />
+  </div>
+
+    <div class="container">
+        <p><img src="{{ blog.image.url }}" class="img-fluid" width=400 height=200 /></p>
+        {{ blog.body }}
+    </div>
+
+</main>
+
+<footer class="text-muted">
+  <div class="container text-center">
+    <!--<p class="float-right">
+      <a href="#">Back to top</a>
+    </p> This is used on large site where the user can easily scroll back to the top-->
+    <p>©️ Fachiis {% now "Y" %}</p> <!--This auto saves and increase the year without getting to type it each year-->
+  </div>
+</footer>
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
