@@ -6,7 +6,7 @@ ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
 #Set work directory
-WORKDIR /code/
+WORKDIR /code
 
 #Install dependencies
 COPY Pipfile Pipfile.lock /code/

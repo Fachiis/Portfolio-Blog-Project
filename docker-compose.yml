@@ -3,7 +3,7 @@ version: '3.7'
 services: 
     web:
         build: .
-        command: python manage.py runserver 0.0.0.0:8000
+        command: gunicorn portfolio_project.wsgi -b 0.0.0.0:8000
 
         environment: 
             - SECRET_KEY=c#oa=q3hf^s-0-4i@w6=6ndy(^=2cth09s#5yz)w8s65e=x3!g
