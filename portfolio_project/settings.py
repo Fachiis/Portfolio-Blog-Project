@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = int(os.environ.get('DEBUG', default=0)) #Production
 
 
-ALLOWED_HOSTS = ['.herokuapp.com', '127.0.0.1', 'localhost'] #Production
+ALLOWED_HOSTS = ['fachiis-folio.herokuapp.com', '127.0.0.1', 'localhost'] #Production
 
 
 # Application definition
@@ -170,6 +170,7 @@ if ENVIRONMENT == 'production':
     SESSION_COOKIE_SECURE = True
     CSRF_COOKIE_SECURE = True
     SECURE_REFERRER_POLICY = 'same-origin'
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 #Parsing dj-database-url with Database-url for heroku connection with the database
 import dj_database_url
